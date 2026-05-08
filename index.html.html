@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MK Future Academy</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(135deg,#020617,#0f172a,#111827);
+color:white;
+overflow-x:hidden;
+}
+
+/* subtle floating animation */
+@keyframes floatUpDown{
+0%{transform:translateY(0px)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0px)}
+}
+
+/* HEADER */
+header{
+position:sticky;
+top:0;
+z-index:1000;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+background:rgba(15,23,42,0.85);
+backdrop-filter:blur(14px);
+box-shadow:0 5px 20px rgba(0,0,0,0.4);
+}
+
+.logo{
+font-size:26px;
+font-weight:700;
+color:#38bdf8;
+letter-spacing:1px;
+}
+
+nav{
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:0.3s;
+font-size:15px;
+position:relative;
+}
+
+nav a::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-4px;
+width:0;
+height:2px;
+background:#38bdf8;
+transition:0.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+/* HERO */
+.hero{
+min-height:90vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px 8%;
+background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:52px;
+margin-bottom:18px;
+animation:floatUpDown 4s ease-in-out infinite;
+}
+
+.hero p{
+max-width:800px;
+margin:auto;
+font-size:18px;
+line-height:1.8;
+margin-bottom:25px;
+opacity:0.95;
+}
+
+.btn{
+padding:14px 28px;
+background:#38bdf8;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-weight:600;
+display:inline-block;
+transition:0.3s;
+box-shadow:0 8px 25px rgba(56,189,248,0.3);
+}
+
+.btn:hover{
+background:#0284c7;
+transform:scale(1.07);
+}
+
+/* SECTIONS */
+section{
+padding:70px 8%;
+}
+
+.title{
+text-align:center;
+font-size:38px;
+margin-bottom:40px;
+color:#38bdf8;
+}
+
+.about p{
+text-align:center;
+max-width:850px;
+margin:auto;
+line-height:1.9;
+font-size:17px;
+opacity:0.95;
+}
+
+/* COURSES */
+.course-boxes{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+}
+
+.course{
+background:rgba(30,41,59,0.7);
+padding:22px;
+border-radius:15px;
+text-align:center;
+transition:0.4s;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+animation:floatUpDown 6s ease-in-out infinite;
+}
+
+.course:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 15px 35px rgba(0,0,0,0.5);
+}
+
+.course h3{
+color:#38bdf8;
+margin-bottom:8px;
+}
+
+/* FORM */
+.register{
+max-width:650px;
+margin:auto;
+background:rgba(15,23,42,0.9);
+padding:30px;
+border-radius:18px;
+box-shadow:0 15px 40px rgba(0,0,0,0.5);
+}
+
+.input-box{
+margin-bottom:15px;
+}
+
+label{
+display:block;
+margin-bottom:6px;
+font-size:14px;
+}
+
+input,select,textarea{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+font-size:15px;
+outline:none;
+}
+
+button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:10px;
+background:#38bdf8;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 8px 20px rgba(56,189,248,0.25);
+}
+
+button:hover{
+background:#0284c7;
+transform:scale(1.03);
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:25px;
+background:#020617;
+margin-top:40px;
+font-size:14px;
+color:#aaa;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.hero h1{font-size:34px;}
+.hero p{font-size:15px;}
+nav{justify-content:center;}
+}
+
+@media(max-width:480px){
+.hero h1{font-size:26px;}
+.logo{font-size:20px;}
+nav a{font-size:13px;}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">MK Future Academy</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#courses">Courses</a>
+<a href="#register">Register</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<div>
+<h1>Build Your Future With MK Future Academy</h1>
+<p>Learn MS Office, WordPad and Typing Master with professional training for jobs and freelancing career.</p>
+<a href="#register" class="btn">Join Now</a>
+</div>
+</section>
+
+<section class="about" id="about">
+<h2 class="title">About Us</h2>
+<p>MK Future Academy provides practical computer education including MS Office tools and WordPad training for beginners to build strong skills for future careers.</p>
+</section>
+
+<section id="courses">
+<h2 class="title">Courses</h2>
+<div class="course-boxes">
+<div class="course"><h3>MS Word</h3></div>
+<div class="course"><h3>MS Excel</h3></div>
+<div class="course"><h3>PowerPoint</h3></div>
+<div class="course"><h3>Typing Master</h3></div>
+<div class="course"><h3>WordPad</h3></div>
+</div>
+</section>
+
+<section id="register">
+<h2 class="title">Registration</h2>
+<div class="register">
+<form action="https://formsubmit.co/majeed091235@gmail.com" method="POST" onsubmit="showMsg()">
+
+<div class="input-box">
+<label>Name</label>
+<input type="text" required>
+</div>
+
+<div class="input-box">
+<label>Father Name</label>
+<input type="text" required>
+</div>
+
+<div class="input-box">
+<label>Mobile</label>
+<input type="tel" required>
+</div>
+
+<div class="input-box">
+<label>Course</label>
+<select>
+<option>MS Word</option>
+<option>MS Excel</option>
+<option>PowerPoint</option>
+<option>Typing Master</option>
+<option>WordPad</option>
+</select>
+</div>
+
+<button type="submit">Submit</button>
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="New Registration">
+
+</form>
+</div>
+</section>
+
+<footer>
+<p>© 2026 MK Future Academy</p>
+</footer>
+
+<script>
+function showMsg(){
+alert("Your registration has been submitted successfully!");
+}
+</script>
+
+</body>
+</html>
